@@ -1,10 +1,11 @@
+#ifndef PLAYER_H
+#define PLAYER_H
 typedef struct {
   int hp;
-  int max_hp;
   int attack;
   int defence;
-  int gold;
-
-  int x;
-  int y;
 } Player;
+
+void init_player(Player *player);
+
+#endif
