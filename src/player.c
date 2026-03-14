@@ -6,4 +6,7 @@ void init_player(Player *player){
   player->attack = 15;
   player->defence = 5;
 
+  player->row = 2;
+  player->column = 2;
+
 }

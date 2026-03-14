@@ -4,6 +4,9 @@ typedef struct {
   int hp;
   int attack;
   int defence;
+
+  int row;
+  int column;
 } Player;
 
 void init_player(Player *player);
