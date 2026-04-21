@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Iinclude
 
-SRC = src/main.c src/player.c src/enemy.c src/combat.c src/map.c
+SRC = src/main.c src/player.c src/enemy.c src/combat.c src/map.c src/inventory.c
 
 OUT = build/rpg
 

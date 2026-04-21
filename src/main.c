@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 #include "player.h"
 #include "enemy.h"
 #include "combat.h"
 #include "map.h"
+#include "inventory.h"
 
 void clear_screen();
 int main(){
@@ -28,7 +30,8 @@ int main(){
     printf("-----------------------------------------------\n");
     printf("PLAYER STATS:\n");
     printf("\n");
-    printf("HP: %d\nAttack: %d\nDefence: %d\n", player.hp, player.attack, player.defence);
+    printf("HP: %d\nAttack: %d\
+      Defense: %d\n", player.hp, player.attack, player.defense);
     print_map(&player);
 
     printf("\n");
@@ -44,13 +47,32 @@ int main(){
     if (moved){
       int event = rand() % 3;
       if(event == 0){
-      Enemy enemy;
-      create_enemy(&enemy);
-      start_combat(&player, &enemy);
+        Enemy enemy;
+        create_enemy(&enemy);
+        start_combat(&player, &enemy);
       }
-      else{
+      else if (event == 1){
         printf("Nothing happen...\n");
+        printf("Do you want to use any potion?\n");
+        printf("1. Yes\n");
+        printf("2. No\n");
+
+        int choice2;
+        scanf("%d", &choice2);
+        if(choice2 == 1)
+          use_potion(&player.inventory, 0, &player.hp);
+        else
+          printf("No potion used.\n");
+
         printf("\n");
+      }
+
+      else if (event == 2){
+        Item potion;
+        strcpy(potion.name, "Water of Life");
+        potion.heal = 25;
+        printf("You found a potion!\n");
+        add_item(&player.inventory, potion);
       }
     printf("-----------------------------------------------\n");
     }
