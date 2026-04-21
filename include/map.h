@@ -7,6 +7,6 @@
 #define MAP_COLUMNS 5
 
 void print_map(Player *player);
-void move_player(Player *player, char direction);
+int move_player(Player *player, char direction);
 
 #endif

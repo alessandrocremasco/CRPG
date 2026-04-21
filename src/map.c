@@ -15,13 +15,23 @@ void print_map(Player *player){
   }
 }
 
-void move_player(Player *player, char direction){
-  if(direction == 'w' && player->column > 0)
+int move_player(Player *player, char direction){
+  int moved = 0;
+  if(direction == 'w' && player->column > 0){
     player->column--;
-  if(direction == 's' && player->column < MAP_ROWS-1)
+    moved = 1;
+  }
+  if(direction == 's' && player->column < MAP_ROWS-1){
     player->column++;
-  if(direction == 'a' && player->row > 0)
+    moved = 1;
+  }
+  if(direction == 'a' && player->row > 0){
     player->row--;
-  if(direction == 'd' && player->row < MAP_COLUMNS-1)
+    moved = 1;
+  }
+  if(direction == 'd' && player->row < MAP_COLUMNS-1){
     player->row++;
+    moved = 1;
+  }
+  return moved;
 }

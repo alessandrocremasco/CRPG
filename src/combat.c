@@ -7,6 +7,7 @@ void start_combat(Player *player, Enemy *enemy){
   printf("\n");
 
   while(player->hp > 0 && enemy->hp > 0){
+    printf("\n");
     printf("YOUR TURN:\n");
     enemy->hp -= player->attack;
     
@@ -18,7 +19,7 @@ void start_combat(Player *player, Enemy *enemy){
 
     if(enemy->hp <= 0)
       break;
-
+    
     printf("ENEMY TURN:\n");
     player->hp -= enemy->attack;
     printf("The %s hits you!\nHP player: %d\n", enemy->name, player->hp);
