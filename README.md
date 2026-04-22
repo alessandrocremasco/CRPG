@@ -11,3 +11,8 @@ RPG game developed in C.
 - Enemies ✅
 - Randomization of events ✅
 - Map ✅
+
+
+## PROBLEMS TO FIX:
+
+- Can't use a potion when I find one.
