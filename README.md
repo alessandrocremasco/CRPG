@@ -2,10 +2,18 @@
 
 RPG game developed in C.
 
-## Alpha version - With Map ✅
-In this version of the game the player fights the enemies until it dies. This version contains a map too where the player can move in each turn.
+*"The princess of Gondor was kidnapped. With a sword and a shield you were assigned the mission to bring back to kingdom its beloved princess. Venture into the deep, dark dungeon. Move across the caves and slash every creature that comes your way to find the princess and succeding the quest!"*
 
-## TO DO
+*Good luck, slayer!*
 
-- Fixing not absence of events at the limits of the map
-- Fixing printing of events
+## Alpha version
+
+- Enemies ✅
+- Randomization of events ✅
+- Map ✅
+
+
+## PROBLEMS TO FIX:
+
+- Can't use a potion when I find one.
+- Make the choice only to "Attack" if the inventory is empty
