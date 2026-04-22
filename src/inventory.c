@@ -6,7 +6,7 @@ void add_item(Inventory *inv, Item item){
     inv->items[inv->count] = item;
   }
   inv->count++;
-  printf("%s added to the inventory!\n", item.name);
+  printf("%s added to the inventory.\n", item.name);
 }
 void use_potion(Inventory *inv, int index, int *player_hp){
   if(index < 0 || index >= inv->count){

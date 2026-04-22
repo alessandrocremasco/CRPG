@@ -19,9 +19,9 @@ int main(){
   printf("\n");
   printf("WELCOME IN CRPG!\n");
   printf("\n");
-  printf("The princess of Gondor was kidnapped.\nWith a sword and a shield you were assigned the mission to bring back to kingdom its beloved princess.\nVenture into the deep, dark dungeon. Move across the caves and slash every creature that comes your way to find the princess and succeding the quest!\n");
+  printf("The princess of Gondor was kidnapped.\nWith a sword and a shield you were assigned the mission to bring back to the kingdom its beloved princess.\nVenture into the deep, dark dungeon. Move across the caves and slash every creature that comes your way to find the princess and completing the quest!\n");
   printf("\n");
-  printf("Good luck, slayer!\n");
+  printf("Good luck, knight of Gondor!\n");
   printf("\n");
   char direction;
 
@@ -53,24 +53,27 @@ int main(){
       }
       else if (event == 1){
         printf("Nothing happen...\n");
-        printf("Do you want to use any potion?\n");
-        printf("1. Yes\n");
-        printf("2. No\n");
+        printf("\n");
+        if(player.inventory.count != 0){
+          printf("Do you want to use any potion?\n");
+          printf("1. Yes\n");
+          printf("2. No\n");
 
-        int choice2;
-        scanf("%d", &choice2);
-  
-        if(choice2 == 1){
-          print_inventory(&player.inventory);
-          int choice3;
-          scanf("%d", &choice3);
-          use_potion(&player.inventory, choice3, &player.hp);
+          int choice2;
+          scanf("%d", &choice2);
+
+          if(choice2 == 1){
+            print_inventory(&player.inventory);
+            int choice3;
+            scanf("%d", &choice3);
+            use_potion(&player.inventory, choice3, &player.hp);
+            printf("\n");
+          }
+          else
+            printf("No potion used.\n");
+
           printf("\n");
         }
-        else
-          printf("No potion used.\n");
-
-        printf("\n");
       }
 
       else if (event == 2){
@@ -83,7 +86,7 @@ int main(){
     printf("-----------------------------------------------\n");
     }
     else{
-      printf("You can't go there...\n");
+      printf("Illegal move\n");
       printf("\n");
       printf("-----------------------------------------------\n");
     }

@@ -13,32 +13,40 @@ void start_combat(Player *player, Enemy *enemy){
     printf("\n");
     printf("YOUR TURN:\n");
 
-    printf("What do you do?\n");
-    printf("\n");
-    printf("1. Attack enemy\n");
-    printf("2. Use potion\n");
+    if(player->inventory.count != 0){
+      printf("What do you do?\n");
+      printf("\n");
+      printf("1. Attack enemy\n");
+      printf("2. Use potion\n");
 
-    int choice1;
-    scanf("%d", &choice1);
+      int choice1;
+      scanf("%d", &choice1);
 
-    if(choice1 == 1){
+      if(choice1 == 1){
+        enemy->hp -= player->attack;
+        printf("You slash the %s! %s gets %d damages.\n",enemy->name, enemy->name, player->attack);
+        printf("%s HP: %d\n", enemy->name, enemy->hp);
+    
+        printf("\n");
+        printf("\n");
+      }
+      else if(choice1 == 2){
+        printf("Which item do you want to use?\n");
+        int choice2;
+        print_inventory(&player->inventory);
+        scanf("%d", &choice2);
+        use_potion(&player->inventory, choice2, &player->hp);
+        printf("\n");
+      }
+    }
+
+    else{
       enemy->hp -= player->attack;
       printf("You slash the %s! %s gets %d damages.\n",enemy->name, enemy->name, player->attack);
       printf("%s HP: %d\n", enemy->name, enemy->hp);
     
       printf("\n");
       printf("\n");
-    }
-    else if(choice1 == 2){
-      printf("Quale oggetto vuoi scegliere?\n");
-      int choice2;
-      print_inventory(&player->inventory);
-      scanf("%d", &choice2);
-      use_potion(&player->inventory, choice2, &player->hp);
-      printf("\n");
-    }
-    else{
-      printf("No potions available...\n");
       continue;
     }
 
