@@ -10,4 +10,5 @@ typedef struct {
 
 void add_item(Inventory *inv, Item item);
 void use_potion(Inventory *inv, int index, int *player_hp);
+void print_inventory(Inventory *inv);
 #endif

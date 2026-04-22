@@ -29,8 +29,14 @@ void start_combat(Player *player, Enemy *enemy){
       printf("\n");
       printf("\n");
     }
-    else if(choice1 == 2)
-      use_potion(&player->inventory, 0, &player->hp);
+    else if(choice1 == 2){
+      printf("Quale oggetto vuoi scegliere?\n");
+      int choice2;
+      print_inventory(&player->inventory);
+      scanf("%d", &choice2);
+      use_potion(&player->inventory, choice2, &player->hp);
+      printf("\n");
+    }
     else{
       printf("No potions available...\n");
       continue;

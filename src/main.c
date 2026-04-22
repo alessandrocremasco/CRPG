@@ -59,8 +59,14 @@ int main(){
 
         int choice2;
         scanf("%d", &choice2);
-        if(choice2 == 1)
-          use_potion(&player.inventory, 0, &player.hp);
+  
+        if(choice2 == 1){
+          print_inventory(&player.inventory);
+          int choice3;
+          scanf("%d", &choice3);
+          use_potion(&player.inventory, choice3, &player.hp);
+          printf("\n");
+        }
         else
           printf("No potion used.\n");
 

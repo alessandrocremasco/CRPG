@@ -15,7 +15,7 @@ void use_potion(Inventory *inv, int index, int *player_hp){
   }
   Item item = inv->items[index];
   if (item.heal > 0){
-    player_hp += item.heal;
+    *player_hp += item.heal;
     printf("You used %s! +%d HP\n", item.name, item.heal);
   }
 
@@ -24,4 +24,10 @@ void use_potion(Inventory *inv, int index, int *player_hp){
   }
 
   inv->count--;
+}
+
+void print_inventory(Inventory *inv){
+  for (int i = 0; i < inv->count; i++){
+    printf("%d) %s\n", i, inv->items[i].name);
+  }
 }
