@@ -16,3 +16,4 @@ RPG game developed in C.
 ## PROBLEMS TO FIX:
 
 - Can't use a potion when I find one.
+- Make the choice only to "Attack" if the inventory is empty
